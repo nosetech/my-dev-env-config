@@ -1,0 +1,1 @@
+/Users/hiroyuki/.config/nvim/lua/plugins.lua
