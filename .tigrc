@@ -1,1 +1,9 @@
-/Users/hiroyuki/.tigrc
+set refresh-mode = periodic
+set refresh-interval = 1
+
+bind refs N !?git checkout -b feature/%(prompt)
+bind refs M !?git merge %(branch)
+bind status O !?git checkout --ours %(file)
+bind status T !?git checkout --theirs %(file)
+bind generic U !?git pull %(remote)
+
