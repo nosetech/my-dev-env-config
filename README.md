@@ -58,3 +58,10 @@ packer.nvim: Error running config for telescope-frecency.nvim: ...im/site/pack/p
 8. coc-diagnostic
 9. coc-markdown-preview-enhanced (require coc-webview)
 10. coc-webview
+
+coc-jedi について  
+coc-settings.json の以下の部分で、jedi-language-server のパスを修正
+
+```
+"jedi.executable.command":⋅"/home/nosetech/.local/bin/jedi-language-server",
+```
