@@ -41,7 +41,13 @@ require'packer'.startup(function(use)
   use {'airblade/vim-gitgutter'}
 
   -- highlighting
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
   -- Indent guide
   use 'lukas-reineke/indent-blankline.nvim'
@@ -55,6 +61,11 @@ require'packer'.startup(function(use)
     config = function()
       require('Comment').setup()
     end
+  }
+  -- TODO comment
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
   }
 end)
 
