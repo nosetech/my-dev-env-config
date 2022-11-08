@@ -12,6 +12,17 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.clipboard = "unnamedplus"
 
+-- clipboard config for wsl
+-- yankしたときにクリップボードに保存する
+if vim.fn.has('wsl') == 1 then
+    vim.api.nvim_create_autocmd('TextYankPost', {
+        group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+        callback = function()
+            vim.fn.system('clip.exe', vim.fn.getreg('"'))
+        end,
+    })
+end
+
 -- Color Scheme
 vim.cmd 'colorscheme iceberg'
 vim.cmd 'highlight GitGutterAdd guifg=green ctermfg=green'
@@ -103,3 +114,5 @@ require("indent_blankline").setup {
   space_char_blankline = " ",
   char_highlight_list = { "IndentBlanklineIndent1",},
 }
+
+require('Comment').setup()

@@ -27,7 +27,7 @@ require'packer'.startup(function(use)
     config = function()
       require"telescope".load_extension("frecency")
     end,
-    requires = {"tami5/sqlite.lua"}
+    requires = {"kkharji/sqlite.lua"}
   }
 
   -- LSP
@@ -48,5 +48,13 @@ require'packer'.startup(function(use)
 
   -- Auto close parentheses
   use 'cohama/lexima.vim'
+
+  -- comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 end)
 
