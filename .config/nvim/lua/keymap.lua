@@ -60,3 +60,14 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*.py" },
 	command = 'Format',
 })
+
+-- todo-comments
+vim.keymap.set("n", "t]", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "t[", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+vim.keymap.set("n", "tn","<cmd>TodoTelescope<cr>")
