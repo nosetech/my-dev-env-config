@@ -71,3 +71,7 @@ vim.keymap.set("n", "t[", function()
 end, { desc = "Previous todo comment" })
 
 vim.keymap.set("n", "tn","<cmd>TodoTelescope<cr>")
+
+-- edge motion
+vim.keymap.set("n", "<C-j>", "<Plug>(edgemotion-j)")
+vim.keymap.set("n", "<C-k>", "<Plug>(edgemotion-k)")

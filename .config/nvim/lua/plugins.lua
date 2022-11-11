@@ -67,5 +67,7 @@ require'packer'.startup(function(use)
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
   }
+  -- edge motion
+  use 'haya14busa/vim-edgemotion'
 end)
 
