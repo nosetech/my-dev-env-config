@@ -1,16 +1,28 @@
-# my-dev-config
+# my-dev-env-config
 
-Linux 環境における nvim+tmux+etc などの開発環境のインストール、設定について記載する。
-
-## zsh
+Mac での開発環境で使用しているツール群 nvim+tmux などの設定について記録・管理しているリポジトリです。  
+基本的にキーボードだけで作業できるようにするため、テキストユーザーインタフェースのツールをできるだけ使用しています。
 
 ## tmux
 
+ターミナル画面を複数のセッション、ウィンドウ、ペインに分割して利用できるツール。
+
+- 環境設定
+  - ホームディレクトリに設定ファイル ~/.tmux.conf を配置する。
+
 ## tig
 
-## nvim
+テキストユーザインタフェース Git クライアント。  
+軽量で慣れると素早く操作できるので気に入ってる。
 
-- packer install
+- 環境設定
+  - ホームディレクトリに設定ファイル ~/.tigrc を配置する。
+
+## Neovim
+
+- 環境設定
+  - ホームディレクトリ直下.config/nvim に設定ファイルを配置する。
+  - packer install
 
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -63,5 +75,5 @@ coc-jedi について
 coc-settings.json の以下の部分で、jedi-language-server のパスを修正
 
 ```
-"jedi.executable.command":⋅"/home/nosetech/.local/bin/jedi-language-server",
+"jedi.executable.command":⋅"~/.local/bin/jedi-language-server",
 ```
