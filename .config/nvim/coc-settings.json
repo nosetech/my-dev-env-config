@@ -1,0 +1,61 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.noselect": false,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.snippetIndicator": " ►",
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown","javascript", "javascriptreact", "typescript","typescriptreact","json","graphql","handlebars"],
+  "eslint.autoFixOnSave": true,
+  "jedi.enable": true,
+  "jedi.startupMessage": false,
+  "jedi.executable.command": "/opt/homebrew/bin/jedi-language-server",
+  "diagnostic-languageserver.filetypes": {
+    "python": "flake8"
+  },
+   "diagnostic-languageserver.linters": {
+    "flake8": {
+      "sourceName": "flake8",
+      "command": "flake8",
+      "debounce": 120,
+      "rootPatterns": [".git", "pyproject.toml", "setup.py"],
+      "args": [
+        "--ignore=E203,E722,W503,W504",
+        "--format=%(row)d,%(col)d,%(code).1s,%(code)s: %(text)s",
+        "-"
+      ],
+      "ignore": ["migrations/"],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "formatLines": 1,
+      "formatPattern": [
+        "(\\d+),(\\d+),([A-Z]),(.*)(\\r|\\n)*$",
+        {
+          "line": 1,
+          "column": 2,
+          "security": 3,
+          "message": 4
+        }
+      ],
+      "securities": {
+        "W": "info",
+        "E": "warning",
+        "F": "info",
+        "C": "info",
+        "N": "hint"
+      }
+    }
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black", "isort"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "black": {
+      "command": "black",
+      "args": ["-q", "-"]
+    },
+    "isort": {
+      "command": "isort",
+      "args": ["-q", "-"]
+    }
+  }
+}
